@@ -1,9 +1,16 @@
 version: '2'
 
+# TODO consider passing $XAUTHORITY
+# https://stackoverflow.com/a/25280523/5894777
+
 services:
   termite:
     build: .
     image: fphammerle/termite
+    environment:
+    - DISPLAY
+    volumes:
+    - /tmp/.X11-unix:/tmp/.X11-unix
     security_opt: ['no-new-privileges']
 
 # https://docs.docker.com/compose/compose-file/compose-file-v2/

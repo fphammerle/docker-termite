@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install --yes --no-install-recommends \
     libxml2-utils \
     valac
 
+# TODO clone and build as unprivileged user
+
 ARG VTE_NE_VERSION=0.50.2-ng
 RUN git clone --branch "$VTE_NE_VERSION" https://github.com/thestinger/vte-ng.git /vte-ng
 WORKDIR /vte-ng
