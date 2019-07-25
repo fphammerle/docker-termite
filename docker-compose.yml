@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  termite:
+    build: .
+    image: fphammerle/termite
+    security_opt: ['no-new-privileges']
+
+# https://docs.docker.com/compose/compose-file/compose-file-v2/
